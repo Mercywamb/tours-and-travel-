@@ -1,0 +1,48 @@
+
+@media (max-width: 600px) {
+  .activity {
+    flex-direction: column;
+  }
+  
+  .activity img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Add more media queries for different screen sizes if needed */
+
+/* Rest of your CSS code */
+h1 {
+  text-align: center;
+}
+
+.activity {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.activity img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.activity-details {
+  flex-grow: 1;
+}
+
+.activity-details h2 {
+  margin-top: 0;
+}
+
+.activity-details p {
+  margin-bottom: 0;
+}
+
+.activity:last-child {
+  margin-bottom: 0;
+}
