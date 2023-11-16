@@ -1,8 +1,6 @@
 
-@media (max-width: 600px) {
-  .activity {
-    flex-direction: column;
-  }
+
+
   
   .activity img {
     width: 100%;
@@ -10,13 +8,18 @@
     margin-right: 0;
     margin-bottom: 10px;
   }
-}
 
-/* Add more media queries for different screen sizes if needed */
 
-/* Rest of your CSS code */
+
 h1 {
   text-align: center;
+}
+.acti{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  
 }
 
 .activity {
@@ -46,3 +49,9 @@ h1 {
 .activity:last-child {
   margin-bottom: 0;
 }
+
+@media (max-width: 600px) {
+  .activity {
+    display: flex;
+    flex-direction: row;
+  }}

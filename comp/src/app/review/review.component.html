@@ -9,19 +9,16 @@
     <label for="email">Email:</label>
     <input type="email" id="email" required>
   </div>
+  <label for="satisfaction">Overall Satisfaction</label>
+  <select id="satisfaction" >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+</select>
   <div>
-    <label for="satisfaction">Overall Satisfaction:</label>
-    <input type="range" id="satisfaction" min="1" max="5" step="1">
-  </div>
-  <div>
-    <label for="tourExperience">How was the Tour:</label>
-    <input type="range" id="tourExperience" min="1" max="5" step="1">
-    <span class="ratingBar">
-      <span class="ratingBarLabel">Terrible</span>
-      <span class="ratingBarLabel">Lovely</span>
-    </span>
-  </div>
-  <div>
+   
     <label for="improvements">How can we improve to serve you better:</label>
     <textarea id="improvements" required></textarea>
   </div>

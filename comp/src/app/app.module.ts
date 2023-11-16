@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ActivitiesComponent } from './activities/activities.component';
-import { HotelsComponent } from './hotels/hotels.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { BookComponent } from './book/book.component';
@@ -23,7 +23,7 @@ import { ReviewComponent } from './review/review.component';
     HomeComponent,
     LoginComponent,
     ActivitiesComponent,
-    HotelsComponent,
+   
     SignupComponent,
     BookComponent,
     ToursComponent,
