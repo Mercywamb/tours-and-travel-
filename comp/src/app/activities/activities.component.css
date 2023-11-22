@@ -1,4 +1,4 @@
-
+/* 
 
 
   
@@ -26,6 +26,63 @@ h1 {
   display: flex;
   margin-bottom: 20px;
 }
+
+.activity img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.activity-details {
+  flex-grow: 1;
+}
+
+.activity-details h2 {
+  margin-top: 0;
+}
+
+.activity-details p {
+  margin-bottom: 0;
+}
+
+.activity:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .activity {
+    display: flex;
+    flex-direction: row;
+  }} */
+
+
+.acti{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    flex-direction: row;
+  }
+  .activity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 30%;
+  }
+  .activity img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  h1 {
+    text-align: center;
+  }
+
+
+
 
 .activity img {
   width: 200px;

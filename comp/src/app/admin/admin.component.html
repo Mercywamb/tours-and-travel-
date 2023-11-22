@@ -1,1 +1,47 @@
-<p>admin works!</p>
+
+
+<div class="container">
+    <h1>Admin Page</h1>
+
+    <!-- Manage Tours Section -->
+    <section id="manage-tours">
+      <h2>Manage Tours</h2>
+      <form id="add-tour-form">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration:</label>
+          <input type="text" id="duration" name="duration" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="text" id="price" name="price" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Tour</button>
+      </form>
+
+      <!-- Display existing tours here, with options for soft-delete and update -->
+    </section>
+
+    <hr>
+
+    <!-- Manage Profiles Section -->
+    <section id="manage-profiles">
+      <h2>Manage Profiles</h2>
+      <!-- Your form or table for profile management goes here -->
+    </section>
+
+    <hr>
+
+    <!-- Manage User Accounts Section -->
+    <section id="manage-accounts">
+      <h2>Manage User Accounts</h2>
+      <!-- Your form or table for account management goes here -->
+    </section>
+  </div>

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { execute, query } from "../services/dbconnect";
+// import { execute, query } from "../services/dbconnect";
 
 import _ from "lodash";
 import { v4 as uuidv4 } from "uuid";
@@ -12,12 +12,13 @@ import {
   validateuserId,
 } from "../validators/userValidator";
 import { comparePass, hashPass } from "../services/passwordHash";
+import { execute, query } from "../services/dbConnect";
 
-export const getUsers = async (req: Request, res: Response) => {
+ export const getUsers = async (req: Request, res: Response) => {
   try {
     const procedureName = "getUsers";
-    const result = await query(`EXEC ${procedureName}`);
-    return res.json(result.recordset);
+     const result = await (`EXEC ${procedureName}`);
+    //  return res.json(result.recordset);
   } catch (error) {
     console.log(error);
   }
@@ -26,7 +27,7 @@ export const getUsers = async (req: Request, res: Response) => {
 export const getUser = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
-    // console.log(id);
+    
     if (!id) return res.status(400).send({ message: "Id is required" });
 
     const { error } = validateuserId.validate(req.params);
@@ -60,7 +61,12 @@ export const registerUser = async (req: Request, res: Response) => {
     const newPassword = await hashPass(password);
 
     const procedure1 = "getUserByEmail";
-    const result = await execute(procedure1, { email });
+    const result = await execute(procedure1, {
+      email,
+      id: "",
+      username: undefined,
+      password: ""
+    });
 
     const userWithEmail = result.recordset[0];
 
@@ -93,6 +99,10 @@ export const registerUser = async (req: Request, res: Response) => {
 };
 
 
+
+function execute(procedureName: string, params: { id: string; username: any; email: any; password: string; }) {
+  throw new Error("Function not implemented.");
+}
 export const loginUser = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
@@ -111,12 +121,12 @@ export const loginUser = async (req: Request, res: Response) => {
       });
       
     const result = await execute(procedureName, { email });
-    // console.log(result)
+   
     if (result) {
       const recordset = result.recordset;
-      // console.log(recordset)
+      
       const user = recordset[0];
-      // console.log(user)
+    
 
       if (!user) {
         return res.status(404).send({ error: "Account does not exist" });
@@ -181,7 +191,7 @@ export const updateUser = async (req: Request, res: Response) => {
 export const deleteUser = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
-    // console.log(id);
+   
     if (!id) return res.status(400).send({ message: "Id is required" });
 
     const { error } = validateuserId.validate(req.params);
@@ -202,7 +212,7 @@ export const deleteUser = async (req: Request, res: Response) => {
 
 export const getUnAssignedUser = async (req: Request, res: Response) => {
   try {
-    // console.log(id);
+ 
 
     const procedureName = "getUnassignedUser";
     const result = await query(`EXEC ${procedureName}`);
@@ -217,7 +227,7 @@ export const resetPassword = async () => {};
 export const forgotPassword = async () => {};
 
 export const checkUserDetails = async (request: any, res: Response) => {
-  // console.log("checking details");
+  
   if (request.info) {
     console.log(request.info);
     
@@ -226,3 +236,7 @@ export const checkUserDetails = async (request: any, res: Response) => {
     });
   }
 };
+
+function execute (procedureName: string, arg1: { id: string; }) {
+  throw new Error("Function not implemented.");
+}
